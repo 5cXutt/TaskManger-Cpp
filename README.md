@@ -1,6 +1,6 @@
 # ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&pause=1000&color=0BC9F7&random=false&width=435&lines=Simple+TaskManger+In+C%2B%2B)
 
-** This C++ program is designed to list active processes on a Windows system, allowing the user to view detailed information about each process and terminate a selected process if necessary. 
+** This C++ program is designed to list active processes on a Windows system, allowing the user to view detailed information about each process and terminate a selected process if necessary.  **
 
 ## Dependencies
 The program depends on the following libraries:
