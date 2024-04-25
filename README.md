@@ -5,7 +5,7 @@
 ## Dependencies
 #### The program depends on the following libraries:**
 
-- `<iostream>`: #### for standard input/output
+#### - `<iostream>`: for standard input/output
 - `<windows.h>`: #### for accessing Windows APIs
 - `<tlhelp32.h>`: #### for enumerating processes
 - `<psapi.h>`: #### for getting information about process memory
