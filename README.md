@@ -36,4 +36,4 @@ The program depends on the following libraries:
 This program provides a simple yet powerful text-based user interface for managing processes on a Windows system.
 
 
-![My Skills](https://skillicons.dev/icons?i=windows,visualstudio,cpp&perline=3)
+![My Skills](https://skillicons.dev/icons?i=windows,visualstudio,cpp,github,git)
