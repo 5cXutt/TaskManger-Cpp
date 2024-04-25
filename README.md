@@ -40,3 +40,4 @@ This program provides a simple yet powerful text-based user interface for managi
 
 
 ## 💖 Support the Project
+https://buymeacoffee.com/scuttlang
