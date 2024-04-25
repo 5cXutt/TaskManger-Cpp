@@ -3,7 +3,6 @@
 #include <tlhelp32.h>
 #include <psapi.h>
 #include <string>
-#include <cstdlib>
 
 const std::string ANSI_COLOR_GREEN_CYAN = "\x1b[36m";
 
@@ -85,20 +84,59 @@ void PrintProcessInfo(DWORD processId) {
     CloseHandle(hProcess);
 }
 
+DWORD GetMainProcessId(DWORD processId) {
+    PROCESSENTRY32 pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32);
+
+    // Ottiene uno snapshot dei processi
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot == INVALID_HANDLE_VALUE) {
+        std::cerr << "Errore durante la creazione dello snapshot dei processi." << std::endl;
+        return 0;
+    }
+
+    // Trova il processo principale
+    if (Process32First(hSnapshot, &pe32)) {
+        do {
+            if (pe32.th32ProcessID == processId) {
+                CloseHandle(hSnapshot);
+                return pe32.th32ParentProcessID;
+            }
+        } while (Process32Next(hSnapshot, &pe32));
+    }
+
+    CloseHandle(hSnapshot);
+    return 0;
+}
+
 bool TerminateProcessById(DWORD processId) {
     HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, processId);
     if (hProcess == NULL) {
         std::cerr << "Errore durante l'apertura del processo." << std::endl;
         return false;
     }
+
     if (!TerminateProcess(hProcess, 0)) {
         std::cerr << "Errore durante la terminazione del processo." << std::endl;
         CloseHandle(hProcess);
         return false;
     }
-    CloseHandle(hProcess);
 
+    std::cout << "Processo terminato con successo." << std::endl;
+    CloseHandle(hProcess);
     return true;
+}
+
+bool TerminateMainProcess(DWORD processId) {
+    DWORD mainProcessId = GetMainProcessId(processId);
+    if (mainProcessId == 0) {
+        std::cerr << "Impossibile ottenere l'ID del processo principale." << std::endl;
+        return false;
+    }
+
+    std::cout << "Processo principale: " << mainProcessId << std::endl;
+
+    return TerminateProcessById(mainProcessId);
 }
 
 void PrintMemoryRegions(DWORD processId) {
@@ -196,19 +234,16 @@ int main() {
         if (choice == 's' || choice == 'S') {
             PrintCPUUsage(processId);
         }
-        std::cout << "Desideri terminare il processo? (y/n): ";
+        std::cout << "Vuoi terminare il processo principale? (s/n): ";
         std::cin >> choice;
-        if (choice == 'y' || choice == 'Y') {
-            if (!TerminateProcessById(processId)) {
-                std::cerr << "Errore durante la terminazione del processo." << std::endl;
-                return 1;
+        if (choice == 's' || choice == 'S') {
+            if (TerminateMainProcess(processId)) {
+                std::cout << "Il processo principale è stato terminato con successo." << std::endl;
             }
-            std::cout << "Processo terminato con successo." << std::endl;
-        }
-        else {
-            std::cout << "Il processo non è stato terminato." << std::endl;
+            else {
+                std::cerr << "Si è verificato un errore durante la terminazione del processo principale." << std::endl;
+            }
         }
     }
     return 0;
 }
-
