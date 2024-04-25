@@ -1,34 +1,40 @@
 # ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&pause=1000&color=0BC9F7&random=false&width=435&lines=Simple+TaskManger+In+C%2B%2B)
 
-## Dipendenze
-Il programma dipende dalle seguenti librerie:
+This C++ program is designed to list active processes on a Windows system, allowing the user to view detailed information about each process and terminate a selected process if necessary.
 
-- `<iostream>`: per input/output standard
-- `<windows.h>`: per l'accesso alle API di Windows
-- `<tlhelp32.h>`: per l'enumerazione dei processi
-- `<psapi.h>`: per ottenere informazioni sulla memoria del processo
-- `<string>`: per la gestione delle stringhe
-- `<cstdlib>`: per l'uso della funzione `system()` per la pulizia dello schermo
+## Dependencies
+The program depends on the following libraries:
 
-## Funzioni principali
+- `<iostream>`: for standard input/output
+- `<windows.h>`: for accessing Windows APIs
+- `<tlhelp32.h>`: for enumerating processes
+- `<psapi.h>`: for getting information about process memory
+- `<string>`: for string handling
+- `<cstdlib>`: for using the `system()` function for screen clearing
 
-- **`GetProcessName(DWORD processId)`:** Restituisce il nome del processo dato il suo ID.
-- **`ListProcesses()`:** Elenca tutti i processi attivi, escludendo "svchost.exe".
-- **`PrintProcessInfo(DWORD processId)`:** Stampa informazioni dettagliate su un processo specificato.
-- **`TerminateProcessById(DWORD processId)`:** Termina un processo dato il suo ID.
-- **`PrintMemoryRegions(DWORD processId)`:** Stampa informazioni sulle regioni di memoria allocate per un processo.
-- **`PrintDLLInfo(DWORD processId)`:** Stampa informazioni sulle DLL caricate da un processo.
-- **`PrintCPUUsage(DWORD processId)`:** Stampa informazioni sull'utilizzo della CPU da parte di un processo.
+## Main Functions
 
-## Funzione `main()`
-- Un ciclo while continua ad eseguire il programma finché l'utente non sceglie di uscire inserendo `0` come ID del processo.
-- All'avvio, vengono elencati tutti i processi attivi.
-- L'utente può inserire l'ID di un processo per visualizzare informazioni dettagliate su di esso.
-- Dopo aver visualizzato le informazioni, l'utente può scegliere di stampare le informazioni sulla memoria, sulle DLL caricate e sull'utilizzo della CPU del processo.
-- L'utente può anche scegliere di terminare il processo.
-- Il ciclo continua finché l'utente sceglie di uscire.
+- **`GetProcessName(DWORD processId)`:** Returns the name of the process given its ID.
+- **`ListProcesses()`:** Lists all active processes, excluding "svchost.exe".
+- **`PrintProcessInfo(DWORD processId)`:** Prints detailed information about a specified process.
+- **`TerminateProcessById(DWORD processId)`:** Terminates a process given its ID.
+- **`PrintMemoryRegions(DWORD processId)`:** Prints information about memory regions allocated for a process.
+- **`PrintDLLInfo(DWORD processId)`:** Prints information about DLLs loaded by a process.
+- **`PrintCPUUsage(DWORD processId)`:** Prints information about CPU usage by a process.
 
-## Questo programma fornisce un'interfaccia utente semplice ma potente per gestire i processi su un sistema Windows.
+## `main()` Function
+- A while loop continues to run the program until the user chooses to exit by entering `0` as the process ID.
+- At startup, all active processes are listed.
+- The user can input the ID of a process to view detailed information about it.
+- After viewing the information, the user can choose to print information about memory, loaded DLLs, and CPU usage of the process.
+- The user can also choose to terminate the process.
+- The loop continues until the user chooses to exit.
+
+## Text Formatting
+- Uses constants to color text in green cyan for better readability.
+
+## This program provides a simple yet powerful text-based user interface for managing processes on a Windows system.
+
 
 
 
