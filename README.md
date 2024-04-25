@@ -1,6 +1,7 @@
 # ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&pause=1000&color=0BC9F7&random=false&width=435&lines=Simple+TaskManger+In+C%2B%2B)
 
-## ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=14&duration=1&color=1CF7EE&background=B5122900&multiline=true&repeat=false&random=false&width=435&lines=Dipendenze;Il+programma+dipende+dalle+seguenti+librerie%3A)
+## Dipendenze
+Il programma dipende dalle seguenti librerie:
 
 - `<iostream>`: per input/output standard
 - `<windows.h>`: per l'accesso alle API di Windows
