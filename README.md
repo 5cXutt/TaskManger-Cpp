@@ -3,10 +3,10 @@
 **This C++ program is designed to list active processes on a Windows system, allowing the user to view detailed information about each process and terminate a selected process if necessary.**
 
 ## Dependencies
-The program depends on the following libraries:
+**The program depends on the following libraries:**
 
-- `<iostream>`: for standard input/output
-- `<windows.h>`: for accessing Windows APIs
+** - `<iostream>`: for standard input/output**
+** - `<windows.h>`: for accessing Windows APIs**
 - `<tlhelp32.h>`: for enumerating processes
 - `<psapi.h>`: for getting information about process memory
 - `<string>`: for string handling
