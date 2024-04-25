@@ -54,8 +54,6 @@ void ListProcesses() {
 }
 
 void PrintProcessInfo(DWORD processId) {
-
-
     std::cout << "Informazioni sul processo:" << std::endl;
     HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, processId);
     if (hProcess == NULL) {
@@ -120,7 +118,6 @@ void PrintMemoryRegions(DWORD processId) {
         std::cout << "Allocation Protect: " << memInfo.AllocationProtect << std::endl;
         std::cout << "State: " << memInfo.State << std::endl;
         std::cout << "Type: " << memInfo.Type << std::endl << std::endl;
-
         lpAddress = (LPVOID)((ULONG_PTR)memInfo.BaseAddress + memInfo.RegionSize);
     }
 
@@ -133,7 +130,6 @@ void PrintDLLInfo(DWORD processId) {
         std::cerr << "Errore durante l'apertura del processo." << std::endl;
         return;
     }
-
     HMODULE hMods[1024];
     DWORD cbNeeded;
     if (EnumProcessModules(hProcess, hMods, sizeof(hMods), &cbNeeded)) {
@@ -147,7 +143,6 @@ void PrintDLLInfo(DWORD processId) {
     else {
         std::cerr << "Impossibile ottenere le informazioni sulle DLL caricate." << std::endl;
     }
-
     CloseHandle(hProcess);
 }
 
@@ -157,7 +152,6 @@ void PrintCPUUsage(DWORD processId) {
         std::cerr << "Errore durante l'apertura del processo." << std::endl;
         return;
     }
-
     FILETIME createTime, exitTime, kernelTime, userTime;
     if (GetProcessTimes(hProcess, &createTime, &exitTime, &kernelTime, &userTime)) {
         ULARGE_INTEGER kernelTimeInt, userTimeInt;
@@ -173,7 +167,6 @@ void PrintCPUUsage(DWORD processId) {
     else {
         std::cerr << "Impossibile ottenere le informazioni sull'utilizzo della CPU del processo." << std::endl;
     }
-
     CloseHandle(hProcess);
 }
 
@@ -187,32 +180,25 @@ int main() {
         if (processId == 0) {
             break;
         }
-
         PrintProcessInfo(processId);
-
         char choice;
-
         std::cout << "Vuoi stampare le informazioni sulle regioni di memoria allocate? (s/n): ";
         std::cin >> choice;
         if (choice == 's' || choice == 'S') {
             PrintMemoryRegions(processId);
         }
-
         std::cout << "Vuoi stampare le informazioni sulle DLL caricate? (s/n): ";
         std::cin >> choice;
         if (choice == 's' || choice == 'S') {
             PrintDLLInfo(processId);
         }
-
         std::cout << "Vuoi stampare le informazioni sull'utilizzo della CPU? (s/n): ";
         std::cin >> choice;
         if (choice == 's' || choice == 'S') {
             PrintCPUUsage(processId);
         }
-
         std::cout << "Desideri terminare il processo? (y/n): ";
         std::cin >> choice;
-
         if (choice == 'y' || choice == 'Y') {
             if (!TerminateProcessById(processId)) {
                 std::cerr << "Errore durante la terminazione del processo." << std::endl;
@@ -224,7 +210,6 @@ int main() {
             std::cout << "Il processo non è stato terminato." << std::endl;
         }
     }
-
     return 0;
 }
 
