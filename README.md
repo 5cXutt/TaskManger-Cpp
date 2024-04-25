@@ -39,5 +39,5 @@ This program provides a simple yet powerful text-based user interface for managi
 ![My Skills](https://skillicons.dev/icons?i=windows,visualstudio,cpp,github,git)
 
 
-## [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=16&pause=1000&color=F752D7&random=false&width=435&lines=%F0%9F%92%96+Support+the+Project)](https://buymeacoffee.com/scuttlang)
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=16&pause=1000&color=F752D7&random=false&width=435&lines=%F0%9F%92%96+Support+the+Project+%F0%9F%92%96)](https://buymeacoffee.com/scuttlang)
 
