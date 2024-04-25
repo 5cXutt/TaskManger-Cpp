@@ -23,12 +23,12 @@ The program depends on the following libraries:**
 - **`PrintCPUUsage(DWORD processId)`:** Prints information about CPU usage by a process.
 
 ## `main()` Function
-- A while loop continues to run the program until the user chooses to exit by entering `0` as the process ID.
-- At startup, all active processes are listed.
-- The user can input the ID of a process to view detailed information about it.
-- After viewing the information, the user can choose to print information about memory, loaded DLLs, and CPU usage of the process.
-- The user can also choose to terminate the process.
-- The loop continues until the user chooses to exit.
+- #### A while loop continues to run the program until the user chooses to exit by entering `0` as the process ID.
+- #### At startup, all active processes are listed.
+- #### The user can input the ID of a process to view detailed information about it.
+- #### After viewing the information, the user can choose to print information about memory, loaded DLLs, and CPU usage of the process.
+- #### The user can also choose to terminate the process.
+- #### The loop continues until the user chooses to exit.
 
 ## Text Formatting
 #### Uses constants to color text in green cyan for better readability.
