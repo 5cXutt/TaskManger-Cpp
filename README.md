@@ -1,4 +1,4 @@
-# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&pause=1000&color=F70000&random=false&width=435&lines=Simple+TaskManger+In+C%2B%2B)](https://git.io/typing-svg)
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&pause=1000&color=0BC9F7&random=false&width=435&lines=Simple+TaskManger+In+C%2B%2B)](https://git.io/typing-svg)
 
 ## Dipendenze
 Il programma dipende dalle seguenti librerie:
@@ -27,3 +27,10 @@ Il programma dipende dalle seguenti librerie:
 - Dopo aver visualizzato le informazioni, l'utente può scegliere di stampare le informazioni sulla memoria, sulle DLL caricate e sull'utilizzo della CPU del processo.
 - L'utente può anche scegliere di terminare il processo.
 - Il ciclo continua finché l'utente sceglie di uscire.
+
+## Questo programma fornisce un'interfaccia utente semplice ma potente per gestire i processi su un sistema Windows.
+
+
+
+
+
