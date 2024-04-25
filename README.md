@@ -30,12 +30,6 @@ The program depends on the following libraries:
 - The user can also choose to terminate the process.
 - The loop continues until the user chooses to exit.
 
-## Text Formatting
-- Uses constants to color text in green cyan for better readability.
-
-This program provides a simple yet powerful text-based user interface for managing processes on a Windows system.
-
-
 ![My Skills](https://skillicons.dev/icons?i=windows,visualstudio,cpp,github,git)
 
 
