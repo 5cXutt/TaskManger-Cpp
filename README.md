@@ -37,3 +37,6 @@ This program provides a simple yet powerful text-based user interface for managi
 
 
 ![My Skills](https://skillicons.dev/icons?i=windows,visualstudio,cpp,github,git)
+
+
+# 💖 Support the Project
