@@ -3,18 +3,18 @@
 ### This C++ program is designed to list active processes on a Windows system, allowing the user to view detailed information about each process and terminate a selected process if necessary.
 
 ## Dependencies
-#### The program depends on the following libraries:**
+The program depends on the following libraries:
 
 - `<iostream>`: for standard input/output
-- `<windows.h>`: #### for accessing Windows APIs
-- `<tlhelp32.h>`: #### for enumerating processes
-- `<psapi.h>`: #### for getting information about process memory
-- `<string>`: #### for string handling
-- `<cstdlib>`: #### for using the `system()` function for screen clearing
+- `<windows.h>`: for accessing Windows APIs
+- `<tlhelp32.h>`: for enumerating processes
+- `<psapi.h>`: for getting information about process memory
+- `<string>`: for string handling
+- `<cstdlib>`: for using the `system()` function for screen clearing
 
 ## Main Functions
 
-- **`GetProcessName(DWORD processId)`:**Returns the name of the process given its ID.
+- **`GetProcessName(DWORD processId)`:** Returns the name of the process given its ID.
 - **`ListProcesses()`:** Lists all active processes, excluding "svchost.exe".
 - **`PrintProcessInfo(DWORD processId)`:** Prints detailed information about a specified process.
 - **`TerminateProcessById(DWORD processId)`:** Terminates a process given its ID.
@@ -23,20 +23,14 @@
 - **`PrintCPUUsage(DWORD processId)`:** Prints information about CPU usage by a process.
 
 ## `main()` Function
-- #### A while loop continues to run the program until the user chooses to exit by entering `0` as the process ID.
-- #### At startup, all active processes are listed.
-- #### The user can input the ID of a process to view detailed information about it.
-- #### After viewing the information, the user can choose to print information about memory, loaded DLLs, and CPU usage of the process.
-- #### The user can also choose to terminate the process.
-- #### The loop continues until the user chooses to exit.
+- A while loop continues to run the program until the user chooses to exit by entering `0` as the process ID.
+- At startup, all active processes are listed.
+- The user can input the ID of a process to view detailed information about it.
+- After viewing the information, the user can choose to print information about memory, loaded DLLs, and CPU usage of the process.
+- The user can also choose to terminate the process.
+- The loop continues until the user chooses to exit.
 
 ## Text Formatting
-#### Uses constants to color text in green cyan for better readability.
+- Uses constants to color text in green cyan for better readability.
 
-### This program provides a simple yet powerful text-based user interface for managing processes on a Windows system.
-
-
-
-
-
-
+This program provides a simple yet powerful text-based user interface for managing processes on a Windows system.
