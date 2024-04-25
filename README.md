@@ -14,7 +14,7 @@
 
 ## Main Functions
 
-- #### **`GetProcessName(DWORD processId)`:**Returns the name of the process given its ID.
+- **`GetProcessName(DWORD processId)`:**Returns the name of the process given its ID.
 - **`ListProcesses()`:** Lists all active processes, excluding "svchost.exe".
 - **`PrintProcessInfo(DWORD processId)`:** Prints detailed information about a specified process.
 - **`TerminateProcessById(DWORD processId)`:** Terminates a process given its ID.
