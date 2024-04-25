@@ -21,7 +21,6 @@ std::wstring GetProcessName(DWORD processId) {
         }
         CloseHandle(hProcess);
     }
-
     return processName;
 }
 
