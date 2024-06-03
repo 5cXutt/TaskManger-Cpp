@@ -181,30 +181,6 @@ void PrintDLLInfo(DWORD processId) {
     CloseHandle(hProcess);
 }
 
-void PrintCPUUsage(DWORD processId) {
-    HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, processId);
-    if (hProcess == NULL) {
-        std::cerr << "Errore durante l'apertura del processo." << std::endl;
-        return;
-    }
-    FILETIME createTime, exitTime, kernelTime, userTime;
-    if (GetProcessTimes(hProcess, &createTime, &exitTime, &kernelTime, &userTime)) {
-        ULARGE_INTEGER kernelTimeInt, userTimeInt;
-        kernelTimeInt.LowPart = kernelTime.dwLowDateTime;
-        kernelTimeInt.HighPart = kernelTime.dwHighDateTime;
-
-        userTimeInt.LowPart = userTime.dwLowDateTime;
-        userTimeInt.HighPart = userTime.dwHighDateTime;
-
-        ULONGLONG totalCpuTime = kernelTimeInt.QuadPart + userTimeInt.QuadPart;
-        std::cout << "Utilizzo della CPU: " << totalCpuTime << " 100 ns ticks" << std::endl;
-    }
-    else {
-        std::cerr << "Impossibile ottenere le informazioni sull'utilizzo della CPU del processo." << std::endl;
-    }
-    CloseHandle(hProcess);
-}
-
 int main() {
     while (true) {
         system("cls");
@@ -226,11 +202,6 @@ int main() {
         std::cin >> choice;
         if (choice == 's' || choice == 'S') {
             PrintDLLInfo(processId);
-        }
-        std::cout << "Vuoi stampare le informazioni sull'utilizzo della CPU? (s/n): ";
-        std::cin >> choice;
-        if (choice == 's' || choice == 'S') {
-            PrintCPUUsage(processId);
         }
         std::cout << "Vuoi terminare il processo principale? (s/n): ";
         std::cin >> choice;
